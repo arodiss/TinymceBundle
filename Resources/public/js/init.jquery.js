@@ -5,6 +5,15 @@
  */
 function initTinyMCE(options) {
     (function ($, undefined) {
+        if(typeof(options) == 'undefined') {
+            if(typeof(window.defaultTinyMCEOptions) == 'undefined') {
+                throw new Error('There are no nor default nor passed tinyMCE options!');
+            }
+            options = window.defaultTinyMCEOptions;
+        } else {
+            window.defaultTinyMCEOptions = options;
+        }
+
         $(function () {
             var $tinymceTargets;
 
