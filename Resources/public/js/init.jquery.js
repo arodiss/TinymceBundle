@@ -27,7 +27,7 @@ function initTinyMCE(options) {
                 var $textarea = $(this),
                     theme = $textarea.data('theme') || 'simple';
 
-                if('undefined' == typeof($textarea.attr('aria-decorated'))) {
+                if('undefined' == typeof($textarea.attr('aria-decorated')) && $textarea.is(':visible')) {
 
                     // Get selected theme options
                     var themeOptions = (typeof options.theme[theme] != 'undefined')
